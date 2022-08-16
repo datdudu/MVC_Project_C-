@@ -19,10 +19,11 @@ namespace SalesWebMvc.Data
         {
             if (_context.Department.Any() ||
                 _context.Seller.Any() ||
-                _context.SalesRecord.Any() )
+                _context.SalesRecord.Any())
             {
                 return; //DB has been seeded
             }
+
 
             Department d1 = new Department(1, "Computers");
             Department d2 = new Department(2, "Electronics");
@@ -35,7 +36,7 @@ namespace SalesWebMvc.Data
             Seller s4 = new Seller(4, "Martha Red", "martha@gmail.com", new DateTime(1993, 11, 30), 3000.0, d4);
             Seller s5 = new Seller(5, "Donald Blue", "donald@gmail.com", new DateTime(2000, 1, 9), 4000.0, d3);
             Seller s6 = new Seller(6, "Alex Pink", "bob@gmail.com", new DateTime(1997, 3, 4), 3000.0, d2);
-            
+
             SalesRecord r1 = new SalesRecord(1, new DateTime(2018, 09, 25), 11000.0, SaleStatus.Billed, s1);
             SalesRecord r2 = new SalesRecord(2, new DateTime(2018, 09, 4), 7000.0, SaleStatus.Billed, s5);
             SalesRecord r3 = new SalesRecord(3, new DateTime(2018, 09, 13), 4000.0, SaleStatus.Canceled, s4);
